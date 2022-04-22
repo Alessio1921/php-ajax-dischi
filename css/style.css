@@ -1,0 +1,28 @@
+body{
+  height: 100%;
+  background-color: rgb(33,45,58);
+}
+.container{
+  margin-top: 60px;
+}
+/* header */
+nav{
+  background-color: rgb(48,58,69);
+  height: 70px;
+}
+.container-fluid,nav a,nav img{
+  height: 100%;
+}
+/* cards */
+.card{
+  height: 350px;
+  border-radius: 0;
+  background-color: rgb(48,58,69);
+}
+.card img{
+  width: 100%;
+}
+.card p{
+  margin: 0;
+  color: rgb(103,112,119);
+}
