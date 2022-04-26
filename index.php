@@ -12,20 +12,25 @@
   </head>
   <body>
     <div id="app">
-      <?php include __DIR__."/server/data.php" ?>
       <header>
-        <nav class="navbar">
+        <nav class="navbar d-flex">
           <div class="container-fluid">
             <a class="navbar-brand" href="#">
               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/300px-Spotify_logo_without_text.svg.png" alt="spotify logo" >
             </a>  
+              <select class="form-select ms-2" @change="filterAlbulms" v-model="selectedGenre">
+                <option value="all">All</option>
+                <option :value="genre.toLowerCase()" v-for="genre in genres">
+                  {{ genre }}
+                </option>
+              </select>
           </div>
         </nav>
       </header>
       <main>
         <div class="container">
           <div class="row row-cols-3 row-cols-md-4 row-cols-lg-5 ">
-            <div class="col" v-for="element in albums">
+            <div class="col" v-for="element in filteredAlbums">
             <div class="card my-2 ">
               <img :src="element.img" class="card-img-top p-3 pb-0" alt="...">
               <div class="card-body text-center pt-0">
